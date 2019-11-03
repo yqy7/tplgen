@@ -7,10 +7,15 @@ import tplgen = require('./');
 const version = require('../package.json').version;
 
 commander.version(version)
-    .requiredOption('-t --tplDir <string>', 'template directory path')
-    .option('-o --outDir <string>', 'output path', './')
-    .option('-c --configFile <string>', 'config file')
+    .option('-t, --tplDir <string>', 'template directory path')
+    .option('-o, --outDir <string>', 'output path', './')
+    .option('-c, --configFile <string>', 'config file')
     .parse(process.argv);
+
+if (!commander.tplDir) {
+    console.error(`error: required option '-t, --tplDir <string>' not specified`);
+    commander.help();
+}
 
 const tplDir = path.resolve('./', commander.tplDir);
 const outDir = path.resolve('./', commander.outDir);
