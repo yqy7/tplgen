@@ -1,0 +1,28 @@
+{
+  "name": "tplgen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch",
+    "testjs": "rm -rf test/out && node test/index.js",
+    "testsh": "test/testcmd.sh"
+  },
+  "bin": {
+    "tplgen": "bin/tplgen.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^4.0.0",
+    "handlebars": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.5",
+    "gulp": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^5.0.1",
+    "typescript": "^3.6.4"
+  }
+}
