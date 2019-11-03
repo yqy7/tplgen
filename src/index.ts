@@ -33,6 +33,6 @@ async function walk(dirname: string, outDir: string ,context: any) {
 }
 
 function compile(text: string, context: any): string {
-    let tpl = Handlebars.compile(text);
+    let tpl = Handlebars.compile(text,{strict: true});
     return tpl(context);
 }
